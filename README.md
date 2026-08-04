@@ -14,16 +14,17 @@ NVIDIA GPU required.
 Linux:
 
 ```sh
-curl -sSf https://leanmodels.ai/install.sh | sh -s -- --cuda
+curl -sSf https://leanmodels.ai/install.sh | sh
 ```
 
 Windows (PowerShell):
 
 ```powershell
-& ([scriptblock]::Create((irm https://leanmodels.ai/install.ps1))) -Cuda
+irm https://leanmodels.ai/install.ps1 | iex
 ```
 
-Drop `--cuda` / `-Cuda` for a CPU-only build. It is fine for `lean pull` and
+Both install the CUDA build, which is what you want to run models on an NVIDIA
+GPU. Pass `--cpu` / `-Cpu` for a CPU-only build - fine for `lean pull` and
 `lean verify`, but far too slow to serve these models.
 
 Both installers verify the download against the `SHA256SUMS` published with each
