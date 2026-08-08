@@ -27,6 +27,18 @@ Both install the CUDA build, which is what you want to run models on an NVIDIA
 GPU. Pass `--cpu` / `-Cpu` for a CPU-only build - fine for `lean pull` and
 `lean verify`, but far too slow to serve these models.
 
+### The CUDA build needs the CUDA Toolkit, not just a driver
+
+lean links cuBLAS, cuRAND and NVRTC directly, and those ship with the
+[CUDA Toolkit](https://developer.nvidia.com/cuda-downloads) rather than with the
+NVIDIA display driver. A machine with a working `nvidia-smi` but no toolkit is
+missing them.
+
+They are resolved by the OS before lean starts, so a missing one is not a lean
+error message - it is `error while loading shared libraries` on Linux, or a
+missing-DLL dialog on Windows. Both installers check for the libraries and tell
+you if they are absent.
+
 Both installers verify the download against the `SHA256SUMS` published with each
 release and refuse to install on a mismatch. You can read either script before
 running it: they are linked from every release below.
