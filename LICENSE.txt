@@ -1,0 +1,187 @@
+LEAN END USER LICENSE AGREEMENT
+
+Last updated: 2026-09-23
+
+This agreement is between you and leanmodels.ai ("we", "us"). It covers the
+lean software: the lean program, the files distributed with it, and the GPU
+runtime libraries lean downloads for you (together, "lean").
+
+By installing, copying or using lean, you agree to this agreement. If you do
+not agree, do not install or use lean. If you accept on behalf of an
+organization, you confirm that you are authorized to bind it, and "you" means
+that organization.
+
+
+1. LICENSE
+
+We grant you a non-exclusive, non-transferable, revocable license to install
+and use lean on computers you own or control, for personal or commercial
+purposes, under the terms of this agreement. lean is licensed, not sold.
+
+
+2. MODELS ARE LICENSED SEPARATELY
+
+Models you download with lean come with their own license terms, shown on
+leanmodels.ai and in each model's files. This agreement grants no rights in
+any model.
+
+
+3. RESTRICTIONS
+
+Except as section 7 allows for open-source components, you may not:
+
+  (a) copy lean, except as needed to install and use it and for reasonable
+      backup;
+  (b) distribute, sell, rent, lend, sublicense or otherwise transfer lean to
+      anyone else (anyone can get lean from leanmodels.ai);
+  (c) reverse engineer, decompile or disassemble lean, except to the extent
+      applicable law expressly permits this despite this limitation;
+  (d) modify lean, or remove or alter any copyright, trademark or other
+      notice in it; or
+  (e) extract any component of lean, including the components in section 6,
+      to use it on its own or with other software.
+
+
+4. OWNERSHIP
+
+lean, and all intellectual property rights in it, belong to us and our
+licensors, including NVIDIA, AMD and Microsoft. We and they reserve all
+rights not expressly granted to you in this agreement.
+
+
+5. UPDATES, DOWNLOADS AND DATA
+
+lean checks for new versions of itself and of the models you have installed,
+and downloads the GPU runtime libraries your graphics card needs the first
+time it uses it. What lean sends when it does this, and how to turn it off,
+is described in our privacy policy at https://leanmodels.ai/privacy.
+
+We are not obliged to provide support or updates. Any update we do provide
+is part of lean and covered by this agreement, or by the terms that come
+with that update.
+
+
+6. NVIDIA, AMD AND MICROSOFT COMPONENTS
+
+lean contains, or downloads for its own use, components that NVIDIA, AMD and
+Microsoft license to us for distribution with lean:
+
+  - NVIDIA CUDA: the CUDA runtime, linked into lean, and on Windows the
+    cuBLAS, cuBLASLt, cuRAND and NVRTC libraries.
+  - AMD HIP SDK: on Windows, the HIP runtime compiler (hiprtc) and its code
+    object manager (amd_comgr), and the hipBLAS, rocBLAS and hipBLASLt
+    libraries with their kernel files.
+  - Microsoft Visual C++ runtime: on Windows, vcruntime140.dll,
+    vcruntime140_1.dll and msvcp140.dll.
+
+For these components:
+
+  (a) They are licensed to you only as part of lean, and only for use by
+      lean. The AMD components are subject to a restricted license and may
+      be used only by lean, to run on AMD hardware.
+  (b) The restrictions in section 3 apply to them, including that they may
+      not be reverse engineered, decompiled or disassembled, and may not be
+      transferred or duplicated except for reasonable backup.
+  (c) You will not disclose or make them available to anyone other than as
+      part of lean.
+  (d) NVIDIA, AMD, Microsoft and their licensors provide them "as is" and
+      disclaim all warranties, express, implied or statutory, including the
+      implied warranties of merchantability, fitness for a particular
+      purpose, title and non-infringement, and any warranty that they will
+      run uninterrupted or error-free. The entire risk of using them is
+      yours.
+  (e) NVIDIA, AMD, Microsoft and their licensors will not be liable to you
+      for any punitive, direct, incidental, indirect, special or
+      consequential damages arising from their use or this agreement, even
+      if advised of the possibility of such damages. AMD's total liability
+      to you for all damages, losses and causes of action, whether in
+      contract, tort (including negligence) or otherwise, will not exceed
+      US$100.
+  (f) They may include technologies from other parties, which those parties
+      license separately; NVIDIA, AMD and Microsoft grant you no rights in
+      those technologies.
+  (g) NVIDIA, AMD and Microsoft are third-party beneficiaries of this
+      agreement and may enforce it with respect to their components.
+
+The vendors' own license files are downloaded with their libraries, in
+lean's runtime folder (~/.leanmodels/runtime).
+
+
+7. OPEN-SOURCE COMPONENTS
+
+lean includes open-source components. THIRD-PARTY-NOTICES.txt, distributed
+with lean and printed by `lean license --notices`, lists them with their
+licenses. Those licenses govern those components, and nothing in this
+agreement limits the rights they give you.
+
+
+8. EXPORT
+
+lean is subject to United States export laws and may be subject to the
+export or import laws of other countries. You will comply with all of them.
+You will not export, re-export or transfer lean, directly or indirectly, to
+any country, person or entity to which the United States or any other
+applicable government restricts exports without the required authorization,
+including any sanctioned or embargoed country or its nationals or residents,
+or any party on a government restricted-party list. You will not use lean
+for any end use involving nuclear, chemical or biological weapons, rocket or
+missile systems, or unmanned aerial vehicles in violation of those laws.
+
+
+9. UNITED STATES GOVERNMENT END USERS
+
+lean and its documentation are "commercial items" as defined at 48 C.F.R.
+2.101, consisting of "commercial computer software" and "commercial computer
+software documentation" as those terms are used in 48 C.F.R. 12.212 and
+48 C.F.R. 227.7202. Consistent with those sections, they are licensed to
+United States Government end users only as commercial items and with only
+the rights granted to all other end users under this agreement.
+
+
+10. TERMINATION
+
+This agreement ends automatically if you breach it. When it ends, you must
+stop using lean and delete every copy you have. Sections 3, 4, 6, 8 and 10
+through 14 survive the end of this agreement.
+
+
+11. NO WARRANTY
+
+LEAN IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND.
+TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS,
+IMPLIED OR STATUTORY, INCLUDING THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT, AND ANY
+WARRANTY THAT LEAN WILL BE ERROR-FREE OR RUN WITHOUT INTERRUPTION. Some
+jurisdictions do not allow the exclusion of implied warranties, so some of
+these exclusions may not apply to you.
+
+
+12. LIMITATION OF LIABILITY
+
+TO THE FULLEST EXTENT PERMITTED BY LAW, WE WILL NOT BE LIABLE FOR ANY
+INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES,
+OR FOR ANY LOSS OF DATA, PROFITS, REVENUE OR BUSINESS, ARISING FROM LEAN OR
+THIS AGREEMENT, EVEN IF WE WERE ADVISED OF THE POSSIBILITY OF THEM. OUR
+TOTAL LIABILITY ARISING FROM LEAN OR THIS AGREEMENT WILL NOT EXCEED THE
+GREATER OF THE AMOUNT YOU PAID US FOR LEAN AND US$100.
+
+
+13. GOVERNING LAW
+
+This agreement is governed by the laws of the State of Montana, United
+States, excluding its conflict-of-laws rules. The state and federal courts
+located in Gallatin County, Montana, have exclusive jurisdiction over any
+dispute arising from it, and you consent to their jurisdiction. A breach of
+section 3 or 6 may cause irreparable harm, and we, and the owners of the
+components in section 6, may seek an injunction for it in any court of
+competent jurisdiction.
+
+
+14. GENERAL
+
+This agreement, together with the license terms of any model you use and our
+privacy policy, is the entire agreement between you and us about lean. If a
+court finds any part of it unenforceable, the rest remains in effect. Not
+enforcing a term is not a waiver of it. You may not assign this agreement;
+we may assign it to a successor to our business. A new version of lean may
+come with an updated agreement, which applies to that version.

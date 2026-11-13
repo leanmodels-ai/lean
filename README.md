@@ -7,7 +7,7 @@ model whose weights are several times your VRAM still runs locally. A 122B model
 serves from a single 24 GB card; the 397B models run on 48 GB.
 
 Single binary. No Python, no Docker, no cloud dependency. Linux and Windows,
-NVIDIA GPU required.
+NVIDIA or AMD GPU, including both in one machine.
 
 ## Install
 
@@ -23,21 +23,26 @@ Windows (PowerShell):
 irm https://leanmodels.ai/install.ps1 | iex
 ```
 
-Both install the CUDA build, which is what you want to run models on an NVIDIA
-GPU. Pass `--cpu` / `-Cpu` for a CPU-only build - fine for `lean pull` and
-`lean verify`, but far too slow to serve these models.
+There is one build per platform. It runs on NVIDIA and AMD GPUs, and on the
+CPU when it finds neither: fine for `lean pull` and `lean verify`, far too slow
+to serve these models.
 
-### The CUDA build needs the CUDA Toolkit, not just a driver
+### What your GPU needs
 
-lean links cuBLAS, cuRAND and NVRTC directly, and those ship with the
-[CUDA Toolkit](https://developer.nvidia.com/cuda-downloads) rather than with the
-NVIDIA display driver. A machine with a working `nvidia-smi` but no toolkit is
-missing them.
+- **Windows: only the graphics driver.** The first time lean uses the GPU it
+  downloads the libraries the driver does not include (NVIDIA's CUDA libraries,
+  about 330 MB, or AMD's HIP libraries, 65 to 185 MB), once, verified against
+  checksums built into lean. `LEAN_NO_RUNTIME_DOWNLOAD=1` turns that off if
+  you would rather install the CUDA Toolkit or AMD HIP SDK yourself. The Visual
+  C++ runtime ships in the zip next to `lean.exe`.
+- **Linux: the driver plus the vendor's runtime libraries.** For NVIDIA,
+  cuBLAS, cuRAND and NVRTC from the
+  [CUDA Toolkit 12](https://developer.nvidia.com/cuda-downloads). For AMD,
+  [ROCm](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/). The
+  installer checks for them and names anything missing.
 
-They are resolved by the OS before lean starts, so a missing one is not a lean
-error message - it is `error while loading shared libraries` on Linux, or a
-missing-DLL dialog on Windows. Both installers check for the libraries and tell
-you if they are absent.
+Supported GPUs (RTX 30/40 series; RDNA 3 and RDNA 4 Radeon cards) are listed at
+<https://leanmodels.ai/docs/hardware/>.
 
 Both installers verify the download against the `SHA256SUMS` published with each
 release and refuse to install on a mismatch. You can read either script before
@@ -61,7 +66,9 @@ Released binaries, their checksums, and the installer scripts. Releases are
 published here automatically when a version is tagged.
 
 The inference engine itself is not open source and is not in this repository.
-Issues and questions about `lean` are welcome here.
+It is licensed under the terms in [LICENSE.txt](LICENSE.txt), which every
+release archive also carries along with `THIRD-PARTY-NOTICES.txt`; `lean license`
+prints both. Issues and questions about `lean` are welcome here.
 
 ## Support
 
